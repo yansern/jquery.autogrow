@@ -1,0 +1,15 @@
+{
+    "name": "jquery.autogrow",
+    "version": "1.0.0",
+    "description": "Fast, compact & accurate textarea autogrow plugin.",
+    "author": "Jensen Tonne <me@jstonne.com>",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/jstonne/jquery.autogrow"
+    },
+    "devDependencies": {
+        "grunt": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-replace": "*"
+    }
+}
