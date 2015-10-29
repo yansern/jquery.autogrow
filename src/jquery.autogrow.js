@@ -28,19 +28,23 @@
 	var grow = function(textarea) {
 
 		var textareaStyle = textarea.style;
-		textareaStyle.height = "auto";
+		textareaStyle.height = "";
 
 		var computedStyle = getComputedStyle(textarea),
-			height = textarea.scrollHeight,
 			minHeight = toInt(computedStyle.minHeight) || toInt(computedStyle.height),
 			maxHeight = toInt(computedStyle.maxHeight),
-			overflow;
+			overflow,
+			height;
 
-		if (maxHeight > 0 && height > maxHeight) {
+		// Get scrollHeight
+		textareaStyle.height = "0";
+		var scrollHeight = textarea.scrollHeight;
+
+		if (maxHeight > 0 && scrollHeight > maxHeight) {
 			height = maxHeight;
 			overflow = "auto";
 		} else {
-			height = (height < minHeight) ? minHeight : height;
+			height = (scrollHeight < minHeight) ? minHeight : scrollHeight;
 			overflow = "hidden";
 		}
 
